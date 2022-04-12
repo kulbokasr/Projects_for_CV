@@ -16,7 +16,6 @@ SchoolWebApiWithFE
 Function: CRUD for School and Student. Assign students to schools. 
 The main thing what was learnt here is error handling and showing to user.
 
-ShopApplicationEfCore – delete
 ShopWebApiWithFE
 Function: CRUD for Shop and Items. Assign items to shops. 
 The main things what were learnt here are own created exceptions, auto mapper, repositories, own created validators.
