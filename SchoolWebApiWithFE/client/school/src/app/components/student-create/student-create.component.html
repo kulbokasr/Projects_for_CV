@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <h3>Create Student</h3>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input name="studentCreate.name" [(ngModel)]="studentCreate.name" type="text" class="form-control" #name />
+      </div>
+      <!-- <div class="mb-3">
+        <label class="form-label">School Id</label>
+        <input name="studentCreate.schoolId" [(ngModel)]="studentCreate.schoolId" type="number" class="form-control" #name1 />
+      </div> -->
+      <label class="form-label">School Id</label>
+      <select class="form-select" [(ngModel)]="studentCreate.schoolId" name="studentCreate.schoolId" (click)="getCurrentSchools()">
+        <option *ngFor="let school of schoolsInput" [ngValue]="school.id" >{{school.id}} {{school.name}} </option>
+      </select>
+      <button (click)="createStudent()" (click)="name.value=''"  type="button" class="btn btn-primary" style="margin-top: 10px;" >
+        Submit
+      </button>
+      <div class="error alert alert-danger" *ngIf="schoolIdErrorInput">{{ schoolIdErrorInput }}</div>
+    </form>
+  </div>

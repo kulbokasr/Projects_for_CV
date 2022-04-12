@@ -1,0 +1,33 @@
+﻿@model List<Shop>
+
+<h3>Shops with items and tags</h3>
+
+<ul>
+    @foreach (var @shop in @Model)
+    {
+        <li>
+            Shop Id - @shop.Id, Shop name - @shop.Name
+            @Html.ActionLink("Delete Shop", "DeleteShop", "Shop", new{id = @shop.Id}, new { @class= "btn btn-danger" })
+            @Html.ActionLink("Update Shop", "UpdateShop", "Shop", new{id = @shop.Id}, new { @class= "btn btn-secondary" })
+        </li>
+        <ul>
+            @foreach (var @item in @shop.Items)
+            {
+                <li>
+                    Item name - @item.Name , shop Id - @item.ShopId
+                    @Html.ActionLink("Delete Item", "DeleteItem", "Item", new{id = @item.Id}, new { @class= "btn btn-danger" })
+                    @Html.ActionLink("Update Item", "UpdateItem", "Item", new{id = @item.Id}, new { @class= "btn btn-secondary" })
+                </li>
+                <ul><div>Item Tags:</div>
+                    @foreach (var @itemtag in @item.ItemTags)
+                    {
+                        <li>
+                            @itemtag.Tag.Name
+                            @Html.ActionLink("Delete Tag", "DeleteItemTag", "Tag", new{tagId = @itemtag.TagId, itemId = @itemtag.ItemId}, new { @class= "btn btn-danger" })
+                        </li>
+                    }
+                </ul>
+            }
+        </ul>
+    }
+</ul>

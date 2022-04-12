@@ -1,0 +1,15 @@
+﻿@model Hotel
+
+@using (Html.BeginForm("AddHotel", "Hotel", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.City)
+    @Html.TextBoxFor(a => a.City)
+
+    @Html.LabelFor(a => a.Address)
+    @Html.TextBoxFor(a => a.Address)
+
+    @Html.LabelFor(a => a.Rooms)
+    @Html.TextBoxFor(a => a.Rooms)
+        
+    <input type="submit" value="Submit"/>
+}

@@ -1,0 +1,8 @@
+﻿Write a C# console application which reads a text file as input and prints total character and English word counts as output.
+
+Let’s assume that code performance is *not* critical.
+
+Application should also have a set of test suites written with chosen xUnit framework (preferably – NUnit)  
+for common values and edge cases. Visual Studio version, project type, code formatting and casing style option have no constraints.
+ 
+Good luck!

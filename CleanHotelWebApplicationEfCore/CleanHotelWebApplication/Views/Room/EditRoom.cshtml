@@ -1,0 +1,21 @@
+﻿@using CleanHotelWebApplication.Dtos
+@model HotelRoom
+
+@using (Html.BeginForm("EditRoom", "Room", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.Room.RoomNumber)
+    @Html.TextBoxFor(a => a.Room.RoomNumber)
+
+    @Html.LabelFor(a => a.Room.Floor)
+    @Html.TextBoxFor(a => a.Room.Floor)
+
+    <div>Select Hotel for this Room</div>
+    @Html.DropDownListFor(a => a.Room.HotelId, new SelectList(Model.Hotels, "Id", "Id"), "", new { @class = "form-control" }) 
+
+    <div>Is Room booked?</div>
+    @Html.DropDownListFor(a => a.Room.Booked, new SelectList(Model.TrueFalse, "Value", "Text"), "", new { @class = "form-control" }) 
+
+    @Html.HiddenFor(a => a.Room.Id)
+        
+    <input type="submit" value="Submit"/>
+}

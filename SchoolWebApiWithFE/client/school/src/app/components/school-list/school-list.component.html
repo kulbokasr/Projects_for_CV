@@ -1,0 +1,42 @@
+<div class="container-fluid">
+<h3>Schools</h3>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let school of schoolsInput">
+        <th *ngIf="idToEdit !=school.id" scope="row">{{school.id}}</th>
+        <td *ngIf="idToEdit !=school.id">{{school.name}}
+          <!-- <ul  *ngFor="let student of school.students">
+            <li >{{student.name}}</li>
+          </ul> -->
+        </td>
+        <td *ngIf="idToEdit !=school.id"><button class="btn btn-danger" (click)="removeSchool(school.id)">Remove</button> <button class="btn btn-primary" (click)="updateSchool(school.id)">Update</button></td>
+
+        
+        <th *ngIf="idToEdit ==school.id" scope="row">{{school.id}}</th>
+        <td *ngIf="idToEdit ==school.id">
+          
+          <form>
+            <div class="mb-3">
+              <input name="updateName" [(ngModel)]="updateName" type="text" class="form-control" />
+            </div>
+            <button (click)="submitUpdatedName()" type="button" class="btn btn-primary">
+              Submit
+            </button>
+            <!-- <div class="error alert alert-danger" *ngIf="errorInput">{{ errorInput }}</div> -->
+          </form>  
+
+        </td>
+
+
+      </tr>
+    </tbody>
+</table>
+</div>

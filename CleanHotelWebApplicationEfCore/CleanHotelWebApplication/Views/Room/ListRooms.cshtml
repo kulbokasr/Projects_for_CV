@@ -1,0 +1,14 @@
+﻿@model List<Room>
+
+<h3>Rooms list</h3>
+
+<ul>
+    @foreach (var room in @Model)
+    {
+        <li>
+            Room Id - @room.Id, number - @room.RoomNumber, floor - @room.Floor, Hotel Id - @room.HotelId, is booked? - @room.Booked
+            @Html.ActionLink("Edit Room", "EditRoom", "Room", new{id = @room.Id}, new { @class= "btn btn-secondary" })
+            @Html.ActionLink("Assign cleaner", "AssignCleaner", "Cleaner", new{roomId = @room.Id}, new { @class= "btn btn-secondary" })
+        </li>
+    }
+</ul>

@@ -1,0 +1,9 @@
+<p>Edit The Shop</p>
+
+<form>
+    <div class="form-group">
+      <label>Shop Title</label>
+      <input [(ngModel)]="shop.name" name="title" type="text" class="form-control">
+    </div>
+    <button type="button" (click) = "updateShop(shop.id, shop.name)" class="btn btn-primary">Submit</button>
+  </form>

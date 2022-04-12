@@ -1,0 +1,13 @@
+﻿@model List<CleanerRoom>
+
+<h3>Cleaners rooms list</h3>
+
+<ul>
+    @foreach (var item in @Model)
+    {
+        <li>
+            Room Id - @item.RoomId, Room number @item.Room.RoomNumber
+            @Html.ActionLink("Room Cleaned", "CleanRoom", "Cleaner", new{roomid = @item.RoomId, cleanerid = @item.CleanerId}, new { @class= "btn btn-secondary" })
+        </li>
+    }
+</ul>

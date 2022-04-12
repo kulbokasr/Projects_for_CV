@@ -1,0 +1,15 @@
+﻿@using CleanHotelWebApplication.Dtos
+@model HotelRoom
+
+@using (Html.BeginForm("AssignRoom", "Room", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.Cleaner.Id)
+    @Html.TextBoxFor(a => a.Cleaner.Id, new { @readonly = true })
+
+    <div>Select Room for this Cleaner</div>
+    @Html.DropDownListFor(a => a.Room.Id, new SelectList(Model.UsableRooms, "Id", "Id"), "", new { @class = "form-control" }) 
+
+
+        
+    <input type="submit" value="Submit"/>
+}

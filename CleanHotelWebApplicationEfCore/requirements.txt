@@ -1,0 +1,17 @@
+Tikslas - sukurti viešbučių kambarių rezervacijos ir aptarnavimo sistemos pirmąjį žingsnį..
+Viešbučiai:
+views:
+sukurti, redaguoti, sąrašas. užeiti į viešbutį, t.y rodyti jame jo kambarius. sąraše rodyti 
+laisvus ir užimtus kambarius dvejais sąrašais. reikės DTO.
+ 
+
+Rooms:
+views:
+sukurti, redaguoti, sąrašas, peržiūrėti vieną. jame - priskirti laisvą valytoją iš atitinkamo miesto. 
+(nerodome tų kurios turi 5 kambarius valymui ar yra iš kito miesto))
+ 
+
+kambarinės:
+views:
+sukurti, redaguoti, sąrašas, peržiūrėti. jame - priskirti kambarį iš atitinkamo miesto kurį reikia 
+valyti IR kuris dar neturi kambarinės.

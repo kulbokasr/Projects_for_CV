@@ -1,0 +1,27 @@
+<p>Please find shop list below</p>
+
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Date Created</th>
+            <th scope="col">Delete</th>
+            <th scope="col">Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let shop of shops">
+            <td> {{shop.id}}</td>
+            <td> {{shop.name}} </td>
+            <td> {{shop.createdDate}} </td>
+            <td> <button type="button" class="btn btn-primary" (click)="deleteShop(shop.id)">Delete</button>  </td>
+            <td> <input [(ngModel)]="shop.tempName" name="title" type="text"> <button class="btn btn-success pull-right" (click) = "updateShop(shop.id, shop.tempName)" type="button" > Update this shop</button>
+            <!--    <td> <a routerLink="/update-shop" [state]="{shop : this.shop}"><button class="btn btn-success pull-right"> Update this shop</button></a>-->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+

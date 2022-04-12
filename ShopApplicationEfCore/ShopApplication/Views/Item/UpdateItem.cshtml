@@ -1,0 +1,19 @@
+﻿@using ShopApplication.Dtos
+@model CreateItem
+
+@using (Html.BeginForm("UpdateItem", "Item", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.Item.Name)
+    @Html.TextBoxFor(a => a.Item.Name)
+
+    @Html.LabelFor(a => a.Item.ShopId)
+    @Html.DropDownListFor(a => a.Item.ShopId, new SelectList(Model.AllShops, "Id", "Name"), "", new { @class = "form-control" })
+
+    @Html.HiddenFor(m => m.Item.Id) // kodel man cia reikejo sitos eilutes, ir ka ji padare? kaip informacija suvaiksciojo? - nes kitaip nesuvaiksto ID ir jis yra 0
+    
+    @Html.LabelFor(a => a.Item.ItemTags)
+    @Html.ListBoxFor(a => a.SelectedTagIds, new SelectList(@Model.Tags,"Id", "Name"))
+    @Html.ValidationMessageFor(a => a.Item.ItemTags)
+        
+    <input type="submit" value="Submit"/>
+}

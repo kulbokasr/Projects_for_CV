@@ -1,0 +1,20 @@
+<h3>Students</h3>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">School Id</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of studentsInput">
+        <th scope="row">{{student.id}}</th>
+        <td>{{student.name}}</td>
+        <td>{{student.schoolId}}</td>
+        <td><button class="btn btn-danger" (click)="removeStudent(student.id)">Remove</button></td>
+      </tr>
+    </tbody>
+</table>

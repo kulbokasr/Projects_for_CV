@@ -1,0 +1,15 @@
+﻿@model Cleaner
+
+@using (Html.BeginForm("EditCleaner", "Cleaner", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.Name)
+    @Html.TextBoxFor(a => a.Name)
+
+    @Html.LabelFor(a => a.SurName)
+    @Html.TextBoxFor(a => a.SurName)
+
+    @Html.LabelFor(a => a.City)
+    @Html.TextBoxFor(a => a.City)
+        
+    <input type="submit" value="Submit"/>
+}

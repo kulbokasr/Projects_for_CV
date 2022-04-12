@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <h3>Create School</h3>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input name="schoolName" [(ngModel)]="schoolName" type="text" class="form-control" #name />
+      </div>
+      <button (click)="createSchool()" (click)="name.value=''" (click)="errorInput = null" type="button" class="btn btn-primary">
+        Submit
+      </button>
+      <div class="error alert alert-danger" *ngIf="errorInput">{{ errorInput }}</div>
+    </form>    
+  </div>

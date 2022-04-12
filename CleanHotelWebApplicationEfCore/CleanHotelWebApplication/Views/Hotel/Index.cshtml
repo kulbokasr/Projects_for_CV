@@ -1,0 +1,56 @@
+﻿@using CleanHotelWebApplication.Dtos
+@model HotelRoom
+
+<h3>Hotels and their rooms</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Hotel</th>
+            <th scope="col">Rooms</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var @hotel in @Model.Hotels)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit hotel", "EditHotel", "Hotel", new{id = @hotel.Id}, new { @class= "btn btn-secondary" })
+                    @Html.ActionLink("Create room for this hotel", "AddRoom", "Room", new{hotelid = @hotel.Id}, new { @class= "btn btn-secondary" })
+                    @hotel.Id, @hotel.City, @hotel.Address
+                </td>
+                <td>
+                   
+                    <div class="container">
+                        <div class="row align-items-start">
+                        <div class="col">
+                        Booked
+                        <ul>
+                            @foreach (var @room in @Model.Rooms.Where(c => c.HotelId == @hotel.Id).Where(d => d.Booked == true))
+                                    {
+                                    <li>
+                                        @room.RoomNumber
+                                    </li>
+                                    }
+                        </ul>
+                        </div>
+                        <div class="col">
+                        Not booked
+                        <ul>
+                            @foreach (var @room in @Model.Rooms.Where(c => c.HotelId == @hotel.Id).Where(d => d.Booked == false))
+                                    {
+                                    <li>
+                                        @room.RoomNumber 
+                                        @Html.ActionLink("Book room", "BookRoom", "Room", new{id = @room.Id}, new { @class= "btn btn-secondary" })
+                                    </li>
+                                    }
+                        </ul>
+                        </div>
+                        </div>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

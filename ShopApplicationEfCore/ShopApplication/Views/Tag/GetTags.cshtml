@@ -1,0 +1,14 @@
+﻿@model List<Tag>
+
+Tag sarasas:
+
+<ul>
+@foreach (var @tag in @Model)
+    {
+    <li>
+        Tag Id - @tag.Id, Tag Name - @tag.Name
+        @Html.ActionLink("Delete Tag", "DeleteTag", "Tag", new{id = @tag.Id}, new { @class= "btn btn-danger" })
+        @Html.ActionLink("Update Tag", "UpdateTag", "Tag", new{id = @tag.Id}, new { @class= "btn btn-secondary" })
+    </li>
+    }
+</ul>
